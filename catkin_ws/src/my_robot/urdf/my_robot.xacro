@@ -82,6 +82,17 @@
       </link>
 
 
+        <joint type="continuous" name="left_wheel_hinge">
+              <origin xyz="0 0.15 0" rpy="0 0 0"/>
+              <child link="left_wheel"/>
+              <parent link="chassis"/>
+              <axis xyz="0 1 0" rpy="0 0 0"/>
+              <limit effort="10000" velocity="1000"/>
+              <dynamics damping="1.0" friction="1.0"/>
+            </joint>
+
+
+<!--
       <link name='right_wheel'>
         <geometry>
           <cyclinder radius="0.1" length="0.05"/>
@@ -95,15 +106,9 @@
 
               </inertial>
             </link>
-            <joint type="continuous" name="left_wheel_hinge">
-              <origin xyz="0 0.15 0" rpy="0 0 0"/>
-              <child link="left_wheel"/>
-              <parent link="chassis"/>
-              <axis xyz="0 1 0" rpy="0 0 0"/>
-              <limit effort="10000" velocity="1000"/>
-              <dynamics damping="1.0" friction="1.0"/>
-            </joint>
 
+
+    
             <joint type="continuous" name="right_wheel_hinge">
               <origin xyz="0 0.15 0" rpy="0 0 0"/>
               <child link="right_wheel"/>
@@ -112,7 +117,7 @@
               <limit effort="10000" velocity="1000"/>
               <dynamics damping="1.0" friction="1.0"/>
             </joint>
-
+-->
 
 
 
