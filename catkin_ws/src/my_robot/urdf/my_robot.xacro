@@ -70,8 +70,7 @@
     <geometry>
       <cyclinder radius="0.1" length="0.05" />
       </geometry>
-      <origin>
-
+      
         <inertial>
           <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
           <mass value="5"/>
@@ -87,8 +86,7 @@
         <geometry>
           <cyclinder radius="0.1" length="0.05">
           </geometry>
-          <origin>
-
+          
             <inertial>
               <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
               <mass value="5"/>
