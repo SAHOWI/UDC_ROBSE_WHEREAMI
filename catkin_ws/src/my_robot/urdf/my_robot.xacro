@@ -87,14 +87,14 @@
     <collision name='left_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
-        <cyclinder size="0.1 0.05"/>
+        <cyclinder length="0.1" radius="0.05"/>
       </geometry>
     </collision>
 
     <visual name='left_wheel_visual'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
-        <cyclinder size="0.1 0.05"/>
+         <cyclinder length="0.1" radius="0.05"/>
       </geometry>
     </visual>
   </link>
@@ -116,14 +116,14 @@
     <collision name='right_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
-        <cyclinder size="0.1 0.05"/>
+         <cyclinder length="0.1" radius="0.05"/>
       </geometry>
     </collision>
 
     <visual name='right_wheel_visual'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
-        <cyclinder size="0.1 0.05"/>
+         <cyclinder length="0.1" radius="0.05"/>
       </geometry>
     </visual>
   </link>
