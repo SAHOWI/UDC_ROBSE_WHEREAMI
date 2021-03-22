@@ -1,19 +1,43 @@
-# ChaseIt
+# UDACITY Robt Engeneer ND Project: ChaseIt
 
 
+![Intermediate Step Robot Model](images/first_model_material.png)
+Intermediate Step Robot Model
 
 
-### External References
-
-#### URDF Checker
-
-The URDF Checker has been build based on information retrieved from
-LINK https://www.youtube.com/watch?v=yhcdc-8dStQ&feature=youtu.be
+## Project Goal
 
 
-This tool is using ROS tools to check a given URDF on comand line to identifiy issues
-with it before start of the full robot environment.
+## Project Description
 
-Usage: 
+### Directory Structure
 
-roslaunch my_robot check_urdf.launch model:='$(find my_robot/urdf/my_robot.xacrol
+![Directory Structure](images/content_2021_03_22.png)
+
+
+### Validate the Project
+
+To validate you will need to download, build and execute the project ChaseIt.
+This project is meant to run in UDACITY Workspace, other environments might be possible.
+
+#### Download the Project
+
+´´´bash
+git clone https://github.com/SAHOWI/ChaseIt.git ChaseIt
+´´´
+#### Build the Project
+
+´´´bash
+cd  ChaseIt/catkin_ws
+catkin_make
+´´´
+
+#### Run the Project
+
+´´´bash
+cd  ChaseIt/catkin_ws
+source devel/setup.bash
+roslaunch my_robot world.launch
+´´´
+
+
