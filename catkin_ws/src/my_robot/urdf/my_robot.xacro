@@ -68,8 +68,8 @@
 
   </link>
 
-<!-- Right Front Wheel -->
-	<link name="front_right_wheel">
+<!-- Right Wheel -->
+	<link name="right_wheel">
 		<visual>
 			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
@@ -89,8 +89,8 @@
 		</inertial>
 	</link>
   
-  <!-- Left Front Wheel -->
-	<link name="front_left_wheel">
+  <!-- Front Wheel -->
+	<link name="left_wheel">
 		<visual>
 			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
@@ -109,6 +109,13 @@
 			<inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
 		</inertial>
 	</link>
-
+  <joint type="continuous" name="left_wheel_hinge">
+    <origin xyz="0 0.15 0" rpy="0 0 0"/>
+    <child link="left_wheel"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
 
 </robot>
