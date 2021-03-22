@@ -1,8 +1,9 @@
-# UDACITY Robt Engeneer ND Project: ChaseIt
+# UDACITY Robot Engeneer ND Project: ChaseIt
 
 
-![Intermediate Step Robot Model](images/first_model_material.png)
 Intermediate Step Robot Model
+![Intermediate Step Robot Model](images/first_model_material.png)
+
 
 
 ## Project Goal
@@ -22,22 +23,22 @@ This project is meant to run in UDACITY Workspace, other environments might be p
 
 #### Download the Project
 
-´´´bash
+'''bash
 git clone https://github.com/SAHOWI/ChaseIt.git ChaseIt
-´´´
+'''
 #### Build the Project
 
-´´´bash
+'''bash
 cd  ChaseIt/catkin_ws
 catkin_make
-´´´
+'''
 
 #### Run the Project
 
-´´´bash
+'''bash
 cd  ChaseIt/catkin_ws
 source devel/setup.bash
 roslaunch my_robot world.launch
-´´´
+'''
 
 
