@@ -31,7 +31,7 @@ git clone https://github.com/SAHOWI/ChaseIt.git ChaseIt
 ```bash
 cd  ChaseIt/catkin_ws
 catkin_make
-``
+```
 
 #### Run the Project
 
