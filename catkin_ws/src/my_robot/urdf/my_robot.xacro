@@ -68,76 +68,47 @@
 
   </link>
 
-<!-- definition of wheels -->
-<!-- left wheel, once ready this will be coned to right weel -->
-
-  <link name='left_wheel'>
-    <pose>0 0 0.1 0 0 0</pose>
-
-    <inertial>
-      <mass value="5.0"/>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <inertia
-          ixx="0.1" ixy="0" ixz="0"
-          iyy="0.1" iyz="0"
-          izz="0.1"
-      />
-    </inertial>
-
-    <collision name='left_wheel_collision'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-        <cylinder length="0.1" radius="0.05"/>
-      </geometry>
-    </collision>
-
-    <visual name='left_wheel_visual'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-         <cylinder length="0.1" radius="0.05"/>
-      </geometry>
-    </visual>
-  </link>
-
-<!-- the right wheel-->
-<link name='right_wheel'>
-    <pose>0 0 0.1 0 0 0</pose>
-
-    <inertial>
-      <mass value="5.0"/>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <inertia
-          ixx="0.1" ixy="0" ixz="0"
-          iyy="0.1" iyz="0"
-          izz="0.1"
-      />
-    </inertial>
-
-    <collision name='right_wheel_collision'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-         <cylinder length="0.1" radius="0.05"/>
-      </geometry>
-    </collision>
-
-    <visual name='right_wheel_visual'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-         <cylinder length="0.1" radius="0.05"/>
-      </geometry>
-    </visual>
-  </link>
-
-<!-- added joint for the left wheel -->
-<!--   <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="0 0.15 0" rpy="0 0 0"/>
-    <child link="left_wheel"/>
-    <parent link="chassis"/>
-    <axis xyz="0 1 0" rpy="0 0 0"/>
-    <limit effort="10000" velocity="1000"/>
-    <dynamics damping="1.0" friction="1.0"/>
-  </joint>
--->
+<!-- Right Front Wheel -->
+	<link name="front_right_wheel">
+		<visual>
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
+			<geometry>
+				<cylinder radius="0.1" length="0.05" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
+			<geometry>
+				<cylinder radius="0.1" length="0.05" />
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="5.0" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
+			<inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
+		</inertial>
+	</link>
+  
+  <!-- Left Front Wheel -->
+	<link name="front_left_wheel">
+		<visual>
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
+			<geometry>
+				<cylinder radius="0.1" length="0.05" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
+			<geometry>
+				<cylinder radius="0.1" length="0.05" />
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="5.0" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
+			<inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
+		</inertial>
+	</link>
 
 
 </robot>
