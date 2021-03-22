@@ -163,7 +163,7 @@
 		<visual>
 			<origin xyz="-0.0 0 0" rpy=" 0 0 0" />
 			<geometry>
-				<mesh filename="package://go_chase_it/meshes/hokuyo.dae" />
+				<mesh filename="package://my_robot/meshes/hokuyo.dae" />
 			</geometry>
 		</visual>
 		<collision>
@@ -184,5 +184,5 @@
 		<parent link="chassis" />
 		<axis xyz="0 1 0" rpy="0 0 0" />
 	</joint>
-  
+
 </robot>
