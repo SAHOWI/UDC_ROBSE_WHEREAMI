@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(my_robot)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -55,6 +55,10 @@ find_package(catkin REQUIRED)
 #   Service1.srv
 #   Service2.srv
 # )
+add_service_files(
+    DriveToTarget.srv
+)
+
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -68,6 +72,12 @@ find_package(catkin REQUIRED)
 #   DEPENDENCIES
 #   std_msgs  # Or other packages containing msgs
 # )
+generate_messages(
+   DEPENDENCIES
+   std_msgs  # Or other packages containing msgs
+)
+
+
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -131,6 +141,8 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/my_robot_node.cpp)
 
+add_executable(${PROJECT_NAME}_node src/drive_bot.cpp)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -145,6 +157,11 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+target_link_libraries(${PROJECT_NAME}_node
+   ${catkin_LIBRARIES}
+)
+
 
 #############
 ## Install ##
