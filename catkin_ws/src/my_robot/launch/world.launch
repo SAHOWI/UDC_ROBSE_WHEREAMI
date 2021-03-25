@@ -9,7 +9,15 @@
   <arg name="roll" default="0.000003"/>
   <arg name="pitch" default="0.000398"/>
   <arg name="yaw" default="0.006970"/>
-  
+ <!-- 
+  <arg name="x" default= "0.0"/>
+  <arg name="y" default="-0.0"/>
+  <arg name="z" default= "0.0"/>
+  <arg name="roll" default="0.0"/>
+  <arg name="pitch" default="0.0"/>
+  <arg name="yaw" default="0.0"/>
+-->
+
 
   <!-- Launch other relevant files-->
   <include file="$(find my_robot)/launch/robot_description.launch"/>
