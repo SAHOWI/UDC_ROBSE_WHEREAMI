@@ -2,13 +2,14 @@
 
 <launch>
 
- <!-- Robot pose -->
-  <arg name="x" default="0"/>
-  <arg name="y" default="0"/>
-  <arg name="z" default="0"/>
-  <arg name="roll" default="0"/>
-  <arg name="pitch" default="0"/>
-  <arg name="yaw" default="0"/>
+  <!-- Robot pose, updated with values caputred from manual repositioning -->
+  <arg name="x" default= "3.136633"/>
+  <arg name="y" default="-3.052617"/>
+  <arg name="z" default= "0.100000"/>
+  <arg name="roll" default="0.000003"/>
+  <arg name="pitch" default="0.000398"/>
+  <arg name="yaw" default="0.006970"/>
+  
 
   <!-- Launch other relevant files-->
   <include file="$(find my_robot)/launch/robot_description.launch"/>
@@ -33,15 +34,7 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
         args="-urdf -param robot_description -model my_robot 
               -x $(arg x) -y $(arg y) -z $(arg z)
-              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
-              <!-- Robot pose -->
-  <arg name="x" default= "3.136633"/>
-  <arg name="y" default="-3.052617"/>
-  <arg name="z" default= "0.100000"/>
-  <arg name="roll" default="0.000003"/>
-  <arg name="pitch" default="0.000398"/>
-  <arg name="yaw" default="0.006970"/>
-  />
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
   <!--launch rviz-->
   <node name="rviz" pkg="rviz" type="rviz" respawn="false"/>
 </launch>
