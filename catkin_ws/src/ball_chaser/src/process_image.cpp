@@ -28,7 +28,7 @@ void process_image_callback(const sensor_msgs::Image img)
     // Request a stop when there's no white ball seen by the camera
     
     // Definitions
-    int white_pixel = 255;
+    int white_pixel_val = 255;
     int white_moment = 0;
     int white_pixels = 0;
     int total_pixels = 0;
