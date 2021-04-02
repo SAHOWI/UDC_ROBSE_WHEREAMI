@@ -12,7 +12,7 @@ ros::Publisher motor_command_publisher;
 
 
 bool handle_drive_requests(ball_chaser::DriveToTarget::Request& req,
-    ball_chaser::DriveToTarget::Response& res)
+    ball_chaser::DriveToTarget::Response& resp)
 {
 
     // Create a motor_command object of type geometry_msgs::Twist
@@ -26,9 +26,8 @@ bool handle_drive_requests(ball_chaser::DriveToTarget::Request& req,
     motor_command_publisher.publish(motor_command);
 
     // Return a response message
-    resp.msg_feedback = "drive_bot handle_drive_requests publish(linear_x: " 
-            + std::to_string((double)motor_command.linear.x) + ", angular_z: " 
-            + std::to_string((double)motor_command.angular.z) + ")";
+    // Return a response message
+    resp.msg_feedback = "Linear velocity: " + std::to_string(motor_command.linear.x) + " , angular velocity: " + std::to_string(motor_command.angular.z);
     ROS_INFO_STREAM(res.msg_feedback);
 
     return true;
