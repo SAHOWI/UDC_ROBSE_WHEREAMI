@@ -11,7 +11,7 @@ ros::Publisher motor_command_publisher;
 // After publishing the requested velocities, a message feedback should be returned with the requested wheel velocities
 
 
-bool handle_drive_request(ball_chaser::DriveToTarget::Request& req,
+bool handle_drive_requests(ball_chaser::DriveToTarget::Request& req,
     ball_chaser::DriveToTarget::Response& res)
 {
 
@@ -26,7 +26,7 @@ bool handle_drive_request(ball_chaser::DriveToTarget::Request& req,
     motor_command_publisher.publish(motor_command);
 
     // Return a response message
-    resp.msg_feedback = "drive_bot handle_drive_request publish(linear_x: " 
+    resp.msg_feedback = "drive_bot handle_drive_requests publish(linear_x: " 
             + std::to_string((double)motor_command.linear.x) + ", angular_z: " 
             + std::to_string((double)motor_command.angular.z) + ")";
     ROS_INFO_STREAM(res.msg_feedback);
