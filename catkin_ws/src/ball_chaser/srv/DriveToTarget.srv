@@ -1,6 +1,6 @@
 # request of my DriveToTarget.srv
-float linear_x
-float angular_z
+float64 linear_x
+float64 angular_z
 ---
 # response of my DriveToTarget.srv
 string msg_feedback
