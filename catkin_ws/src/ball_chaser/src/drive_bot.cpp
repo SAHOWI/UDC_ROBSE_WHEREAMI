@@ -23,14 +23,13 @@ bool handle_drive_request(ball_chaser::DriveToTarget::Request& req,
     ball_chaser::DriveToTarget::Response& res)
 {
 
-    //ROS_INFO("DriveToTarget received - velocity:%1.2f, heading:%1.2f", (float)req.linear_x, (float)req.angular_z);
-
-    // Delete the loop, move the code to the inside of the callback function and make the necessary changes to publish the requested velocities instead of constant values
     // Create a motor_command object of type geometry_msgs::Twist
     geometry_msgs::Twist motor_command;
-    // Set wheel velocities, forward [0.5, 0.0]
+  
+    // Set wheel velocities, e.g. forward [0.5, 0.0]
     motor_command.linear.x = req.linear_x;
     motor_command.angular.z = req.angular_z;
+  
     // Publish angles to drive the robot
     motor_command_publisher.publish(motor_command);
 
