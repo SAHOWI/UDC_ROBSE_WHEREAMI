@@ -70,10 +70,11 @@ int main(int argc, char** argv)
 
     // Define a drive /ball_chaser/command_robot service with a handle_drive_request callback function
     motor_command_publisher = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
-    ros::ServiceServer service = n.advertiseService("/ball_chaser/command_robot", handle_drive);
-   
+    ros::ServiceServer service = n.advertiseService("/ball_chaser/command_robot", drive_bot);
+    
 
     // Handle ROS communication events
+    ROS_INFO("Ready to send joint commands")
     ros::spin();
 
     return 0;
