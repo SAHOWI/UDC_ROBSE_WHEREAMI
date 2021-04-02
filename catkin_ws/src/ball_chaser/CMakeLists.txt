@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(ball_chaser)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -53,12 +53,22 @@ find_package(catkin REQUIRED COMPONENTS
 #   Message2.msg
 # )
 
+
 ## Generate services in the 'srv' folder
 # add_service_files(
 #   FILES
 #   Service1.srv
 #   Service2.srv
 # )
+
+
+## Project ChaseIt: Generate services in the 'srv' folder
+add_service_files(
+   FILES
+   DriveToTArget.srv
+ )
+
+
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -72,6 +82,14 @@ find_package(catkin REQUIRED COMPONENTS
 #   DEPENDENCIES
 #   std_msgs
 # )
+
+## Project ChaseIt: Generate added messages and services with any dependencies listed here
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
+
+
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -116,7 +134,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -204,3 +222,11 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+add_executable(drive_bot src/drive_bot.cpp)
+add_executable(process_image src/process_image.cpp)
+target_link_libraries(drive_bot ${catkin_LIBRARIES})
+target_link_libraries(process_image ${catkin_LIBRARIES})
+add_dependencies(drive_bot ball_chaser_generate_messages_cpp)
+add_dependencies(process_image ball_chaser_generate_messages_cpp)
