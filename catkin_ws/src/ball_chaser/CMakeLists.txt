@@ -65,7 +65,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Project ChaseIt: Generate services in the 'srv' folder
 add_service_files(
    FILES
-   DriveToTArget.srv
+   DriveToTarget.srv
  )
 
 
