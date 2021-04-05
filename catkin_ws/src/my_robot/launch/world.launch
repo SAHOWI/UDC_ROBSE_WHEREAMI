@@ -38,6 +38,7 @@
 <!-- Find my robot Description-->
   <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot)/urdf/my_robot.xacro'"/>
 
+  <!-- changed -model from "my_robot" to "my_robot_spawned" as per review -->
   <!-- Spawn My Robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
         args="-urdf -param robot_description -model my_robot 
