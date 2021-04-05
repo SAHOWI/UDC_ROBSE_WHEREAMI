@@ -27,48 +27,6 @@ void process_image_callback(const sensor_msgs::Image img)
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
     
-    // Definitions
-    //  old version to be corrected 
-    /*
-    int white_pixel_val = 255;
-    int white_moment = 0;
-    int white_pixels = 0;
-    int total_pixels = 0;
-    float awm;
-    float x, z;
- 
-    for(int i=0; i<img.height; ++i)
-    {
-        for (int j=0; j<img.step; ++j)
-        {
-            ++total_pixels;
-            
-            if (img.data[i * img.step + j] == white_pixel_val)
-            {
-                ++white_pixels;
-                white_moment = white_moment + j - img.step/2;
-                awm = white_moment/white_pixels;
-            }
-        }
-    }
-    
-    ROS_INFO("%d white pixels found - awm is:  %1.2f ", (int)white_pixels,awm);
-
-    if (white_pixels == 0) 
-    { // no pixels found turn until you find some!
-        x = 0.0;
-        z = -.5;
-    }  
-    else 
-    {
-        x = 0.1;
-        z=  -0.5*awm/600;
-    }
-    
-    // next move
-    drive_robot(x,z);
-*/
-
 
 // Complete rework of the initial Version, as the initial version (allthough working) was not considering the 3 RGB channels seperately
 // This rework is based on Review Feedback and related on knowledge artikel  https://knowledge.udacity.com/questions/368996
